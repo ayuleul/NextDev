@@ -6,3 +6,5 @@ export const metrics = {
   screenWidth: width,
   screenHeight: height,
 };
+
+export const isSmallDevice = Dimensions.get('window').width < 360;
