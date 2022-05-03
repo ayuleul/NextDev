@@ -1,27 +1,31 @@
 import {colors} from './colors';
 
-export const styles = {
-  container: {
-    flex: 1,
-    backgroundColor: colors.background,
-  },
-  flexRow: {
-    flexDirection: 'row',
-  },
-  flexColumn: {
-    flexDirection: 'column',
-  },
-  flexCenter: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  justifyCenter: {
-    justifyContent: 'center',
-  },
-  alignCenter: {
-    alignItems: 'center',
-  },
-  justifyBetween: {
-    justifyContent: 'space-between',
-  },
+export const Container = {
+  flex: 1,
+  backgroundColor: colors.background,
+};
+
+export const FlexRow = {
+  flexDirection: 'row',
+};
+
+export const FlexColumn = {
+  flexDirection: 'column',
+};
+
+export const FlexCenter = {
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
+export const JustifyCenter = {
+  justifyContent: 'center',
+};
+
+export const AlignCenter = {
+  alignItems: 'center',
+};
+
+export const JustifyBetween = {
+  justifyContent: 'space-between',
 };
