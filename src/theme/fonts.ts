@@ -33,6 +33,8 @@ const fontSizes = {
 
 const sizes = {
   medium: metrics.screenWidth * 0.4,
+  small: metrics.screenWidth * 0.2,
+  xSmall: metrics.screenWidth * 0.12,
 };
 
 const spacing = {
