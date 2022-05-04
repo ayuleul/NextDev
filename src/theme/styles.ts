@@ -1,3 +1,4 @@
+import {metrics} from './metrics';
 import {colors} from './colors';
 
 export const Container = {
@@ -28,4 +29,8 @@ export const AlignCenter = {
 
 export const JustifyBetween = {
   justifyContent: 'space-between',
+};
+
+export const Padding20 = {
+  padding: metrics.screenWidth * 0.04,
 };

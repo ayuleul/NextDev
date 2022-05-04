@@ -1,12 +1,14 @@
 import {Text, View} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
-import {Container} from '../../theme';
+import {Container, Padding20} from '../../theme';
+import {Blog} from '../../components';
 
 const Home = () => {
   return (
-    <View style={Container}>
-      <Text style={styles.logo}>Home</Text>
+    <View style={[Container, Padding20]}>
+      <Text style={styles.logo}>Next Dev</Text>
+      <Blog />
     </View>
   );
 };

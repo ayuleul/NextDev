@@ -1,10 +1,17 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {colors, isSmallDevice} from '../theme';
 import {Platform} from 'react-native';
+
+import {colors, isSmallDevice} from '../theme';
 import {TabBarIcon, TabBarLabel} from '../components';
-import {Home} from '../screens';
-import {HomeFilled, HomeOutlined} from '../assets/icons';
+import {
+  HomeFilled,
+  HomeOutlined,
+  TagFilled,
+  TagOutlined,
+} from '../assets/icons';
+import {Home, Tags} from '../screens';
+
 const Tab = createBottomTabNavigator();
 
 export const BottomTabNavigation = () => {
@@ -30,6 +37,20 @@ export const BottomTabNavigation = () => {
             />
           ),
           tabBarLabel: props => <TabBarLabel label="Home" {...props} />,
+        }}
+      />
+      <Tab.Screen
+        name="Tags"
+        component={Tags}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <TabBarIcon
+              focused={focused}
+              filledICon={TagFilled}
+              outlinedIcon={TagOutlined}
+            />
+          ),
+          tabBarLabel: props => <TabBarLabel label="Tags" {...props} />,
         }}
       />
     </Tab.Navigator>

@@ -1,15 +1,47 @@
 import {metrics} from './metrics';
 
-const sizes = {
+type fontWeightType =
+  | 'normal'
+  | 'bold'
+  | '100'
+  | '200'
+  | '300'
+  | '400'
+  | '500'
+  | '600'
+  | '700'
+  | '800'
+  | '900'
+  | undefined;
+
+interface IFontWeight {
+  bold: fontWeightType;
+  semiBold: fontWeightType;
+  normal: fontWeightType;
+  medium: fontWeightType;
+  light: fontWeightType;
+}
+
+const fontSizes = {
   fontH1: metrics.screenWidth * 0.08,
-  fontH2: metrics.screenWidth * 0.07,
-  fontH3: metrics.screenWidth * 0.06,
-  fontH4: metrics.screenWidth * 0.05,
+  fontH2: metrics.screenWidth * 0.06,
+  fontH3: metrics.screenWidth * 0.05,
+  fontH4: metrics.screenWidth * 0.045,
   fontBase: metrics.screenWidth * 0.04,
-  fontSmall: metrics.screenWidth * 0.03,
+  fontSmall: metrics.screenWidth * 0.035,
 };
 
-const weight = {
+const sizes = {
+  medium: metrics.screenWidth * 0.4,
+};
+
+const spacing = {
+  small: metrics.screenWidth * 0.02,
+  medium: metrics.screenWidth * 0.04,
+  large: metrics.screenWidth * 0.06,
+};
+
+const weight: IFontWeight = {
   bold: 'bold',
   semiBold: '700',
   medium: '500',
@@ -24,4 +56,4 @@ const fontFamily = {
   light: 'OpenSans-Light',
 };
 
-export {sizes, weight, fontFamily};
+export {fontSizes, sizes, spacing, weight, fontFamily};
