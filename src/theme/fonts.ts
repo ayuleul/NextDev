@@ -35,6 +35,8 @@ const sizes = {
   medium: metrics.base * 0.4,
   small: metrics.base * 0.2,
   xSmall: metrics.base * 0.12,
+  xxSmall: metrics.base * 0.08,
+  xxxSmall: metrics.base * 0.06,
 };
 
 const spacing = {

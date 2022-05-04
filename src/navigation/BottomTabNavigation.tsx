@@ -1,9 +1,8 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Platform} from 'react-native';
 
-import {colors, isSmallDevice} from '../theme';
-import {TabBarIcon, TabBarLabel} from '../components';
+import {colors, sizes} from '../theme';
+import {TabBarIcon} from '../components';
 import {
   HomeFilled,
   HomeOutlined,
@@ -18,9 +17,10 @@ export const BottomTabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarShowLabel: false,
         headerShown: false,
         tabBarStyle: {
-          height: Platform.OS === 'ios' ? 75 : isSmallDevice ? 44 : 58,
+          height: sizes.xSmall,
           backgroundColor: colors.white,
         },
         tabBarHideOnKeyboard: true,
@@ -36,7 +36,6 @@ export const BottomTabNavigation = () => {
               outlinedIcon={HomeOutlined}
             />
           ),
-          tabBarLabel: props => <TabBarLabel label="Home" {...props} />,
         }}
       />
       <Tab.Screen
@@ -50,7 +49,6 @@ export const BottomTabNavigation = () => {
               outlinedIcon={TagOutlined}
             />
           ),
-          tabBarLabel: props => <TabBarLabel label="Tags" {...props} />,
         }}
       />
     </Tab.Navigator>

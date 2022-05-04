@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native';
+import {sizes} from '../../../theme';
 
 export const styles = StyleSheet.create({
   image: {
     opacity: 1,
-    width: 24,
-    height: 24,
+    width: sizes.xxxSmall,
+    height: sizes.xxxSmall,
   },
 });
