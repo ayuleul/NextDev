@@ -23,24 +23,24 @@ interface IFontWeight {
 }
 
 const fontSizes = {
-  fontH1: metrics.screenWidth * 0.08,
-  fontH2: metrics.screenWidth * 0.06,
-  fontH3: metrics.screenWidth * 0.05,
-  fontH4: metrics.screenWidth * 0.045,
-  fontBase: metrics.screenWidth * 0.04,
-  fontSmall: metrics.screenWidth * 0.035,
+  fontH1: metrics.base * 0.08,
+  fontH2: metrics.base * 0.06,
+  fontH3: metrics.base * 0.05,
+  fontH4: metrics.base * 0.045,
+  fontBase: metrics.base * 0.04,
+  fontSmall: metrics.base * 0.035,
 };
 
 const sizes = {
-  medium: metrics.screenWidth * 0.4,
-  small: metrics.screenWidth * 0.2,
-  xSmall: metrics.screenWidth * 0.12,
+  medium: metrics.base * 0.4,
+  small: metrics.base * 0.2,
+  xSmall: metrics.base * 0.12,
 };
 
 const spacing = {
-  small: metrics.screenWidth * 0.02,
-  medium: metrics.screenWidth * 0.04,
-  large: metrics.screenWidth * 0.06,
+  small: metrics.base * 0.02,
+  medium: metrics.base * 0.04,
+  large: metrics.base * 0.06,
 };
 
 const weight: IFontWeight = {

@@ -33,5 +33,5 @@ export const JustifyBetween = {
 } as ViewStyle;
 
 export const Padding20 = {
-  padding: metrics.screenWidth * 0.04,
+  padding: metrics.base * 0.04,
 } as ViewStyle;
