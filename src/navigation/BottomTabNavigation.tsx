@@ -6,10 +6,12 @@ import {TabBarIcon} from '../components';
 import {
   HomeFilled,
   HomeOutlined,
+  SavedFilled,
+  SavedOutlined,
   TagFilled,
   TagOutlined,
 } from '../assets/icons';
-import {Home, Tags} from '../screens';
+import {Home, Saved, Tags} from '../screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,6 +49,19 @@ export const BottomTabNavigation = () => {
               focused={focused}
               filledICon={TagFilled}
               outlinedIcon={TagOutlined}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Saved"
+        component={Saved}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <TabBarIcon
+              focused={focused}
+              filledICon={SavedFilled}
+              outlinedIcon={SavedOutlined}
             />
           ),
         }}
