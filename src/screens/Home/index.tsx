@@ -1,28 +1,47 @@
-import {Text, View} from 'react-native';
+import {FlatList, Image, Text, View} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
-import {Container, Padding20} from '../../theme';
-import {Blog} from '../../components';
-import {avatar} from '../../assets/images';
+import {Container, PaddingH20} from '../../theme';
+import {Blog, Header, Icon} from '../../components';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {TopMenu} from '../../assets/icons';
+import {useFeaturedArticles} from '../../services';
 
 const Home = () => {
+  const {featured} = useFeaturedArticles({
+    page: 1,
+    per_page: 20,
+  });
   return (
-    <View style={[Container, Padding20]}>
-      <Text style={styles.logo}>Next Dev</Text>
-      <Blog
-        title="The best way to predict the future is to create it."
-        author="John Doe"
-        avatar={avatar}
-        date="Today"
-        highlight="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus facilis quas modi mollitia voluptate aspernatur, ab reiciendis nemo officiis repellendus velit aut iure veritatis nulla accusantium numquam natus dignissimos pariatur!"
-      />
-      <Blog
-        title="The best way to predict the future is to create it."
-        author="John Doe"
-        avatar={avatar}
-        date="2 days ago"
-        highlight="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus facilis quas modi mollitia voluptate aspernatur, ab reiciendis nemo officiis repellendus velit aut iure veritatis nulla accusantium numquam natus dignissimos pariatur!"
-      />
+    <View style={[Container, PaddingH20]}>
+      <SafeAreaView style={Container}>
+        <Header
+          leftComponent={
+            <Icon
+              onPress={() => console.log('Pressed')}
+              children={<Image style={styles.topMenu} source={TopMenu} />}
+            />
+          }
+          centerComponent={<Text style={styles.logo}>Next Dev</Text>}
+        />
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={featured}
+          keyExtractor={item => item?.id.toString()}
+          renderItem={({item}: {item: IFeatured}) => {
+            const {user, title, description, created_at} = item;
+            return (
+              <Blog
+                title={title}
+                author={user?.name}
+                avatar={{uri: user.profile_image}}
+                date={created_at}
+                highlight={description}
+              />
+            );
+          }}
+        />
+      </SafeAreaView>
     </View>
   );
 };

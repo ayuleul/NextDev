@@ -6,5 +6,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     padding: spacing.small,
     borderRadius: spacing.small,
+    elevation: 2,
   },
 });

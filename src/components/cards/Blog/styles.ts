@@ -22,15 +22,16 @@ export const styles = StyleSheet.create({
   },
   highlight: {
     fontSize: fontSizes.fontSmall,
+    color: colors.black,
   },
   authorName: {
-    fontSize: fontSizes.fontH3,
+    fontSize: fontSizes.fontBase,
     color: colors.black,
     paddingLeft: spacing.small,
-    fontWeight: weight.bold,
+    width: '65%',
   },
   date: {
-    fontSize: fontSizes.fontBase,
+    fontSize: fontSizes.fontSmall,
     color: colors.black,
   },
 });

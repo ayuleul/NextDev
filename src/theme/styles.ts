@@ -32,6 +32,6 @@ export const JustifyBetween = {
   justifyContent: 'space-between',
 } as ViewStyle;
 
-export const Padding20 = {
-  padding: metrics.base * 0.04,
+export const PaddingH20 = {
+  paddingHorizontal: metrics.base * 0.04,
 } as ViewStyle;
