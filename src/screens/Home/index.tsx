@@ -5,13 +5,18 @@ import {Container, PaddingH20} from '../../theme';
 import {Blog, Header, Icon} from '../../components';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TopMenu} from '../../assets/icons';
-import {useFeaturedArticles} from '../../services';
+import {getFeaturedList$} from '../../services';
+import {useQuery} from 'react-query';
 
 const Home = () => {
-  const {featured} = useFeaturedArticles({
-    page: 1,
-    per_page: 20,
-  });
+  const {data} = useQuery(
+    'featured',
+    () => getFeaturedList$({page: 1, per_page: 30}),
+    {
+      keepPreviousData: true,
+    },
+  );
+
   return (
     <View style={[Container, PaddingH20]}>
       <SafeAreaView style={Container}>
@@ -26,7 +31,7 @@ const Home = () => {
         />
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={featured}
+          data={data?.data}
           keyExtractor={item => item?.id.toString()}
           renderItem={({item}: {item: IFeatured}) => {
             const {user, title, description, created_at} = item;
