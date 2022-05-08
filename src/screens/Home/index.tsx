@@ -1,4 +1,4 @@
-import {FlatList, Image, Text, View} from 'react-native';
+import {FlatList, Image, Text} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
 import {Container, PaddingH20} from '../../theme';
@@ -18,36 +18,34 @@ const Home = () => {
   );
 
   return (
-    <View style={[Container, PaddingH20]}>
-      <SafeAreaView style={Container}>
-        <Header
-          leftComponent={
-            <Icon
-              onPress={() => console.log('Pressed')}
-              children={<Image style={styles.topMenu} source={TopMenu} />}
+    <SafeAreaView style={[Container, PaddingH20]}>
+      <Header
+        leftComponent={
+          <Icon
+            onPress={() => console.log('Pressed')}
+            children={<Image style={styles.topMenu} source={TopMenu} />}
+          />
+        }
+        centerComponent={<Text style={styles.logo}>Next Dev</Text>}
+      />
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={data?.data}
+        keyExtractor={item => item?.id.toString()}
+        renderItem={({item}: {item: IFeatured}) => {
+          const {user, title, description, created_at} = item;
+          return (
+            <Blog
+              title={title}
+              author={user?.name}
+              avatar={{uri: user?.profile_image}}
+              date={created_at}
+              highlight={description}
             />
-          }
-          centerComponent={<Text style={styles.logo}>Next Dev</Text>}
-        />
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={data?.data}
-          keyExtractor={item => item?.id.toString()}
-          renderItem={({item}: {item: IFeatured}) => {
-            const {user, title, description, created_at} = item;
-            return (
-              <Blog
-                title={title}
-                author={user?.name}
-                avatar={{uri: user.profile_image}}
-                date={created_at}
-                highlight={description}
-              />
-            );
-          }}
-        />
-      </SafeAreaView>
-    </View>
+          );
+        }}
+      />
+    </SafeAreaView>
   );
 };
 

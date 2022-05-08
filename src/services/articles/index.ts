@@ -1,1 +1,1 @@
-export * from './useFeaturedArticles';
+export * from './getFeaturedList';

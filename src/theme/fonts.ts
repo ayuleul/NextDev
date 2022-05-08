@@ -32,6 +32,9 @@ const fontSizes = {
 };
 
 const sizes = {
+  xxLarge: metrics.base * 0.7,
+  xLarge: metrics.base * 0.6,
+  large: metrics.base * 0.5,
   medium: metrics.base * 0.4,
   small: metrics.base * 0.2,
   xSmall: metrics.base * 0.12,
@@ -40,9 +43,11 @@ const sizes = {
 };
 
 const spacing = {
+  xSmall: metrics.base * 0.01,
   small: metrics.base * 0.02,
   medium: metrics.base * 0.04,
   large: metrics.base * 0.06,
+  xLarge: metrics.base * 0.08,
 };
 
 const weight: IFontWeight = {
