@@ -10,6 +10,16 @@ export const styles = StyleSheet.create({
   imageContainer: {
     width: '100%',
     height: '100%',
-    borderRadius: sizes.xxSmall / 2,
+    borderRadius: sizes.small / 2,
+  },
+  xSmallContainer: {
+    width: sizes.xSmall,
+    height: sizes.xSmall,
+    borderRadius: sizes.xSmall / 2,
+  },
+  smallContainer: {
+    width: sizes.small,
+    height: sizes.small,
+    borderRadius: sizes.small / 2,
   },
 });
