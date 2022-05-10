@@ -4,6 +4,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {colors, sizes} from '../theme';
 import {TabBarIcon} from '../components';
 import {
+  DiscussionFilled,
+  DiscussionOutlined,
   HomeFilled,
   HomeOutlined,
   SavedFilled,
@@ -36,6 +38,19 @@ export const BottomTabNavigation = () => {
               focused={focused}
               filledICon={HomeFilled}
               outlinedIcon={HomeOutlined}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Discussion"
+        component={Tags}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <TabBarIcon
+              focused={focused}
+              filledICon={DiscussionFilled}
+              outlinedIcon={DiscussionOutlined}
             />
           ),
         }}

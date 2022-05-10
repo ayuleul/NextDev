@@ -5,13 +5,13 @@ import {Container, PaddingH20} from '../../theme';
 import {Blog, Header, Icon} from '../../components';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TopMenu} from '../../assets/icons';
-import {getFeaturedList$} from '../../services';
+import {getArticles$} from '../../services';
 import {useQuery} from 'react-query';
 
 const Home = () => {
   const {data} = useQuery(
     'featured',
-    () => getFeaturedList$({page: 1, per_page: 30}),
+    () => getArticles$({page: 1, per_page: 30}),
     {
       keepPreviousData: true,
     },
@@ -33,16 +33,7 @@ const Home = () => {
         data={data?.data}
         keyExtractor={item => item?.id.toString()}
         renderItem={({item}: {item: IFeatured}) => {
-          const {user, title, description, created_at} = item;
-          return (
-            <Blog
-              title={title}
-              author={user?.name}
-              avatar={{uri: user?.profile_image}}
-              date={created_at}
-              highlight={description}
-            />
-          );
+          return <Blog item={item} />;
         }}
       />
     </SafeAreaView>
