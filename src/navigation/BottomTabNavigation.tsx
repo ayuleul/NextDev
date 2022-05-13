@@ -13,7 +13,7 @@ import {
   TagFilled,
   TagOutlined,
 } from '../assets/icons';
-import {Home, Saved, Tags} from '../screens';
+import {Home, Saved, Tags, Discussion} from '../screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -44,7 +44,7 @@ export const BottomTabNavigation = () => {
       />
       <Tab.Screen
         name="Discussion"
-        component={Tags}
+        component={Discussion}
         options={{
           tabBarIcon: ({focused}) => (
             <TabBarIcon
